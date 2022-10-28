@@ -18,6 +18,8 @@ public class FruitServiceimpl implements FruitService {
 
 	@Autowired
 	FruitRepository fruitRepository;
+
+
 	
 	@Override
 	public List<FruitRes> getAllFruit() {
@@ -101,5 +103,6 @@ public class FruitServiceimpl implements FruitService {
 		}
 		fruitRepository.delete(fruiOptional.get());
 	}
+	// lưu hình ảnh vảo đĩa
 
 }

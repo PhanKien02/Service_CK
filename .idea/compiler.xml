@@ -14,6 +14,7 @@
     <bytecodeTargetLevel>
       <module name="BaiCK.BaiCK.main" target="11" />
       <module name="BaiCK.BaiCK.test" target="11" />
+      <module name="BaiCK.BaiCK.test~2" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
