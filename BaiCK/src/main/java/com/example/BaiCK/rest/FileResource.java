@@ -1,28 +1,20 @@
 package com.example.BaiCK.rest;
-
-import com.example.BaiCK.domain.FileImage;
 import com.example.BaiCK.rest.response.FileRes;
 import com.example.BaiCK.service.FileService;
 import com.example.BaiCK.service.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.MimeType;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import java.io.File;
 import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("api/image")

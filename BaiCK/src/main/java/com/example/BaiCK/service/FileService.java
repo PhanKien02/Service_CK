@@ -7,5 +7,4 @@ import java.io.IOException;
 
 public interface FileService {
     FileRes UploadFile(MultipartFile file) throws IOException ;
-//    FileRes getImageByid(long id);
 }

@@ -20,13 +20,14 @@ public class FruitServiceimpl implements FruitService {
 	FruitRepository fruitRepository;
 
 
-	
+
 	@Override
 	public List<FruitRes> getAllFruit() {
 		List<Fruit> fruits = fruitRepository.findAll();
 		List<FruitRes> fruitRests = new ArrayList<>();
 		for(Fruit fruit : fruits) {
 			FruitRes fruitRes = FruitRes.builder()
+					.id(fruit.getId())
 					.title(fruit.getTitle())
 					.description(fruit.getDescription())
 					.thumbnail(fruit.getThumbnail())
@@ -36,21 +37,24 @@ public class FruitServiceimpl implements FruitService {
 		
 		return fruitRests;
 	}
-	public  FruitRes getFruit(long id){
-		Optional<Fruit> fruitOptional = fruitRepository.findById(id);
-		if(fruitOptional.isEmpty())
+
+	@Override
+	public FruitRes getFruitbyid(Long id) {
+		Optional<Fruit> fruiOptional = fruitRepository.findById(id);
+		if(fruiOptional.isEmpty())
 		{
 			throw new Exception(404,"not found fruit by id= "+id);
 		}
-		Fruit fruit = fruitOptional.get();
+		Fruit fruit = fruiOptional.get();
 		FruitRes fruitRes = FruitRes.builder()
 				.id(fruit.getId())
 				.title(fruit.getTitle())
 				.description(fruit.getDescription())
 				.thumbnail(fruit.getThumbnail())
 				.build();
-		return  null;
+		return fruitRes;
 	}
+
 	@Override
 	public FruitRes createFruit(FruitReq fruitReq) {
 		Fruit fruit = Fruit.builder()
@@ -78,6 +82,7 @@ public class FruitServiceimpl implements FruitService {
 		}
 		Fruit fruit = fruiOptional.get();
 		fruit =Fruit.builder()
+				.id(fruitReq.getId())
 				.title(fruitReq.getTitle())
 				.description(fruitReq.getDescription())
 				.thumbnail(fruitReq.getThumbnail())
@@ -103,6 +108,4 @@ public class FruitServiceimpl implements FruitService {
 		}
 		fruitRepository.delete(fruiOptional.get());
 	}
-	// lưu hình ảnh vảo đĩa
-
 }

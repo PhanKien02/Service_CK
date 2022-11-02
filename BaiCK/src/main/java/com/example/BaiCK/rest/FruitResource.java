@@ -27,13 +27,6 @@ public class FruitResource {
 		return fruitRes;
 		
 	}
-	@GetMapping("fruits/{id}")
-	public FruitRes getAllFruit(@Valid @PathVariable(required = true) long id) {
-		logger.debug("REST request to get Fruit");
-		FruitRes fruitRes = fruitService.getFruit(id);
-		return fruitRes;
-
-	}
 	 @PostMapping("fruits")
 	 public FruitRes creatFruits(@Valid @RequestBody FruitReq fruitReq) {
 		 logger.debug("REST request to creat Fruit");

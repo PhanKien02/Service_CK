@@ -26,7 +26,7 @@ public class FileServiceimpl implements FileService {
 
         long size = file.getSize();
        String code= FileUtil.saveFile(fileName, file);
-        String path ="http://localhost:8080/api/image/downloadFile/"+code;
+        String path ="http://192.168.10.134:8080/api/image/downloadFile/"+code;
         FileImage fileImage = FileImage.builder()
                 .name(fileName)
                 .url(path)

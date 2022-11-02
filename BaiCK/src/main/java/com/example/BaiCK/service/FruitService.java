@@ -13,7 +13,7 @@ public interface FruitService {
 
     List<FruitRes> getAllFruit();
 
-    FruitRes getFruit(long id);
+    FruitRes getFruitbyid(Long id);
     FruitRes createFruit(FruitReq fruitReq);
 
     FruitRes updateFruit(FruitReq fruitReq);
